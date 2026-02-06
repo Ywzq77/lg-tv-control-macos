@@ -3,30 +3,30 @@ LGTVController.__index = LGTVController
 
 -- Configuration
 local config = {
-    tv_ip = "",
-    tv_mac_address = "",
-    tv_input = "HDMI_1", -- Input to which your Mac is connected
-    switch_input_on_wake = true, -- When computer wakes, switch to `tv_input`
-    debug = false, -- Enable debug messages
+    tv_ip = "192.168.5.23",
+    tv_mac_address = "64:75:DA:0B:4D:E2",
+    tv_input = "HDMI_2", -- Input to which your Mac is connected
+    switch_input_on_wake = false, -- When computer wakes, switch to `tv_input`
+    debug = true, -- Enable debug messages
     control_audio = false, -- Control audio volume/mute with keyboard
-    prevent_sleep_when_using_other_input = true, -- Prevent TV sleep if TV is on an input other than `tv_input`
+    prevent_sleep_when_using_other_input = false, -- Prevent TV sleep if TV is on an input other than `tv_input`
     disable_lgtv = false, -- Disable this script entirely by setting this to true
     -- You can also disable it by creating an empty file  at `~/.disable_lgtv`.
 
     -- You likely will not need to change anything below this line
-    screen_off_command = "screen_off",
+    screen_off_command = "power_off",
     key_file_path = "~/.aiopylgtv.sqlite",
     connected_tv_identifiers = {"LG TV", "LG TV SSCR2"},
     bin_path = "~/bin/bscpylgtvcommand",
     wakeonlan_path = "~/bin/wakeonlan",
-    app_id = "com.webos.app." .. ("HDMI_1"):lower():gsub("_", ""),
+    app_id = "com.webos.app." .. ("HDMI_2"):lower():gsub("_", ""),
     set_pc_mode_on_wake = true,
     tv_device_name = "Mac",
-    debounce_seconds = 10,
-    before_sleep_command = nil,
-    after_sleep_command = nil,
-    before_wake_command = nil,
-    after_wake_command = nil,
+    debounce_seconds = 20,
+    before_sleep_command = "power_off",
+    after_sleep_command = "power_off",
+    before_wake_command = "turn_screen_on",
+    after_wake_command = "turn_screen_on",
 }
 
 if config.tv_ip == "" or config.tv_mac_address == "" then
