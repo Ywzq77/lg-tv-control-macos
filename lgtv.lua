@@ -3,8 +3,8 @@ LGTVController.__index = LGTVController
 
 -- Configuration
 local config = {
-    tv_ip = "",
-    tv_mac_address = "",
+    tv_ip = "192.168.5.23",
+    tv_mac_address = "64:75:DA:B:4D:E2",
     tv_input = "HDMI_1", -- Input to which your Mac is connected
     switch_input_on_wake = true, -- When computer wakes, switch to `tv_input`
     debug = false, -- Enable debug messages
@@ -22,7 +22,7 @@ local config = {
     app_id = "com.webos.app." .. ("HDMI_1"):lower():gsub("_", ""),
     set_pc_mode_on_wake = true,
     tv_device_name = "Mac",
-    debounce_seconds = 10,
+    debounce_seconds = 20,
     before_sleep_command = nil,
     after_sleep_command = nil,
     before_wake_command = nil,
