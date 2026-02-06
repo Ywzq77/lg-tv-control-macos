@@ -2,7 +2,7 @@ local LGTVController = {}
 LGTVController.__index = LGTVController
 
 -- Configuration
-local config = {
+local config = { 
     tv_ip = "",
     tv_mac_address = "",
     tv_input = "HDMI_1", -- Input to which your Mac is connected
